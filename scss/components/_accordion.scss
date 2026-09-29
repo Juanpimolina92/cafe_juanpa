@@ -1,0 +1,18 @@
+@use "../utilities/variables" as v;
+
+.accordion-simple {
+    max-width: 850px;
+    margin: 0 auto;
+
+    .accordion-button {
+        &:not(.collapsed) {
+            color: v.$color-blanco;
+            background-color: v.$color-verde;
+        }
+
+        &:focus {
+            border-color: v.$color-verde;
+            box-shadow: 0 0 0 4px rgba(v.$color-verde, 0.35);
+        }
+    }
+}

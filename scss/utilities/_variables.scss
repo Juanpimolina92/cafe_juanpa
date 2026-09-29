@@ -1,0 +1,51 @@
+// Paleta con contraste AA sobre superficies opacas.
+$color-titulo: #8a350b;
+$color-subtitulo: #703809;
+$color-texto: #0d1011;
+$color-parrafo: #0d1011;
+$color-intro: #0d1011;
+$color-main: #0d1011;
+$color-header: #c7d7df;
+$color-turquesa: #1d9b9b;
+$color-navbar: #d3e2bd;
+$color-verde: #48621a;
+$color-verde-activo: #3e5515;
+$color-verde-oscuro: #3f5514;
+$color-tarjeta-activa: #adca9a;
+$color-superficie: #b9d5d5;
+$color-borde: #667d89;
+$color-footer: #c7d7df;
+$color-blanco: #ffffff;
+$color-negro: #000000;
+
+// Tipografia.
+$fuente-principal: "Bebas Neue", sans-serif;
+$texto-base: 1rem;
+$peso-normal: 400;
+
+// Espaciados y bordes que se repiten en el proyecto.
+$espacio-xs: 8px;
+$espacio-sm: 12px;
+$espacio-md: 15px;
+$espacio-lg: 20px;
+$espacio-xl: 25px;
+$espacio-2xl: 30px;
+$espacio-3xl: 40px;
+$ancho-contenido: 1140px;
+$tamano-logo: 80px;
+$duracion-entrada: 700ms;
+$desplazamiento-entrada: 18px;
+$radio-enlace: 6px;
+$radio-control: 8px;
+$radio-panel: 12px;
+$radio-tarjeta: 15px;
+$radio-carousel: 16px;
+$borde-control: 2px;
+$borde-foco: 3px;
+$transicion: 0.3s ease;
+$sombra-tarjeta: 0 10px 20px rgba($color-negro, 0.25);
+$sombra-comentario: 0 10px 20px rgba($color-negro, 0.3);
+
+// Breakpoints originales.
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;

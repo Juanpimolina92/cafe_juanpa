@@ -1,0 +1,27 @@
+// 1. Reset
+@use "base/reset";
+
+// 2. Generales y utilidades
+@use "utilities/variables";
+@use "utilities/mixins";
+@use "base/base";
+@use "base/tipografia";
+
+// 3. Header y navegación
+@use "layout/header";
+@use "layout/nav";
+
+// 4. Main y componentes
+@use "layout/estructura";
+@use "components/carousel";
+@use "components/cards";
+@use "components/buttons";
+@use "components/lists";
+@use "components/accordion";
+@use "components/forms";
+
+// 5. Footer
+@use "layout/footer";
+
+// 6. Media queries agrupadas
+@use "layout/media-queries";

@@ -1,0 +1,90 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: v.$color-texto;
+    line-height: 1.6;
+    background-color: v.$color-header;
+    font-weight: v.$peso-normal;
+    background-image: url("../imagenes/escritorio-cafe-programacion.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+[id] {
+    scroll-margin-top: v.$espacio-lg * 2;
+}
+
+main:focus,
+header:focus {
+    outline: none;
+}
+
+.salto-contenido {
+    position: fixed;
+    top: v.$espacio-xs;
+    left: v.$espacio-xs;
+    z-index: 1100;
+    max-width: calc(100% - #{v.$espacio-xs * 2});
+    padding: v.$espacio-sm v.$espacio-lg;
+    color: v.$color-blanco;
+    background-color: v.$color-verde-oscuro;
+    border-radius: v.$radio-control;
+    transform: translateY(calc(-100% - #{v.$espacio-lg}));
+
+    &:focus {
+        color: v.$color-blanco;
+        @include m.foco($separacion: v.$borde-control);
+        transform: translateY(0);
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: v.$texto-base;
+}
+
+p {
+    color: v.$color-parrafo;
+    font-size: v.$texto-base;
+    font-weight: v.$peso-normal;
+}
+
+// El contenido permanece legible si la biblioteca no carga o se navega con Tab.
+html:not(.aos-activo) [data-aos],
+[data-aos]:focus-within {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+html.aos-activo [data-aos="fade-up"] {
+    transform: translate3d(0, v.$desplazamiento-entrada, 0);
+
+    &.aos-animate {
+        transform: none;
+    }
+}
+
+
+address { font-style: normal; }
+main a:not(.btn) { color: v.$color-verde-oscuro; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    @include m.foco;
+}

@@ -1,0 +1,80 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+main {
+    color: v.$color-main;
+    background-color: #edf3f3;
+    border-radius: v.$radio-panel;
+    padding: clamp(v.$espacio-sm, 3vw, v.$espacio-lg);
+    min-width: 0;
+
+    .row > *,
+    section,
+    article {
+        min-width: 0;
+    }
+}
+
+.grid-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "galeria"
+        "productos"
+        "comentarios"
+        "pagos";
+    gap: v.$espacio-lg;
+    width: 100%;
+    max-width: v.$ancho-contenido;
+    margin-inline: auto;
+}
+
+.galeria-cafe {
+    grid-area: galeria;
+    padding: clamp(v.$espacio-xs, 2vw, v.$espacio-lg);
+    text-align: center;
+}
+
+.productos {
+    grid-area: productos;
+    display: flex;
+    flex-direction: column;
+    gap: v.$espacio-lg;
+    padding: clamp(v.$espacio-xs, 2vw, v.$espacio-lg);
+}
+
+.comentarios {
+    grid-area: comentarios;
+    padding: clamp(v.$espacio-xs, 2vw, v.$espacio-lg);
+}
+
+.pagos {
+    grid-area: pagos;
+    display: flex;
+    flex-direction: column;
+    gap: v.$espacio-md;
+    padding: clamp(v.$espacio-xs, 2vw, v.$espacio-lg);
+}
+
+.proyectos {
+    padding: clamp(v.$espacio-xs, 2vw, v.$espacio-lg);
+    margin-bottom: v.$espacio-2xl;
+}
+
+.contenedor-proyectos {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: v.$espacio-lg;
+    margin-top: v.$espacio-lg;
+
+    article {
+        padding: v.$espacio-lg;
+    }
+}
+
+.intro-pagina {
+    max-width: 700px;
+    margin: 0 auto v.$espacio-lg;
+    color: v.$color-intro;
+    text-align: center;
+}

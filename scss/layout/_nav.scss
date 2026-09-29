@@ -1,0 +1,164 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+.navbar-cafe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: v.$espacio-md;
+    width: 100%;
+    min-width: 0;
+    padding: v.$espacio-sm;
+    background-color: v.$color-navbar;
+    border-radius: v.$radio-panel;
+
+    a {
+        color: v.$color-texto;
+        text-decoration: none;
+        font-size: v.$texto-base;
+    }
+    .container-fluid {
+        padding-inline: 0;
+        gap: v.$espacio-xs;
+        min-width: 0;
+    }
+
+    .navbar-collapse,
+    .navbar-nav {
+        min-width: 0;
+        flex-wrap: wrap;
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .navbar-text {
+        color: v.$color-texto;
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .navbar-text,
+    .navbar-toggler {
+        border-radius: v.$radio-control;
+        @include m.transicion-control;
+    }
+
+    .navbar-brand {
+        padding: 6px 10px;
+        font-size: 1.35rem;
+        margin-right: 0;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .nav-link {
+        margin: 3px;
+        padding: 7px 11px;
+        font-size: 1.05rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        // Pagina seleccionada; los estados interactivos van despues.
+        &.active {
+            color: v.$color-blanco;
+            background-color: v.$color-verde-activo;
+        }
+    }
+
+    .navbar-text {
+        display: inline-block;
+        padding: 6px 10px;
+        font-size: 1.1rem;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    .navbar-brand,
+    .nav-link,
+    .navbar-text {
+        &:hover {
+            color: v.$color-blanco;
+            background-color: v.$color-verde;
+        }
+    }
+
+    .navbar-brand,
+    .nav-link {
+        &:focus {
+            color: v.$color-blanco;
+            background-color: v.$color-verde;
+            @include m.foco;
+            box-shadow: 0 0 0 3px rgba(v.$color-verde, 0.4);
+        }
+
+        &:active {
+            color: v.$color-blanco;
+            background-color: v.$color-verde-oscuro;
+            transform: scale(0.95);
+        }
+    }
+
+    .navbar-toggler {
+        flex-shrink: 0;
+        border: v.$borde-control solid v.$color-texto;
+
+        &:hover {
+            background-color: v.$color-verde;
+            border-color: v.$color-blanco;
+        }
+
+        &:focus {
+            @include m.foco;
+            box-shadow: 0 0 0 3px rgba(v.$color-verde, 0.45);
+        }
+
+        &:active {
+            background-color: v.$color-verde-oscuro;
+            transform: scale(0.94);
+        }
+    }
+}
+
+.anclas-secciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: v.$espacio-xs;
+    width: 100%;
+    min-width: 0;
+    max-width: v.$ancho-contenido;
+    margin: v.$espacio-lg auto;
+    padding: v.$espacio-sm;
+    background: v.$color-header;
+    border-radius: v.$radio-panel;
+
+    .enlace-ancla {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: v.$espacio-sm * 4;
+        max-width: 100%;
+        padding: v.$espacio-xs v.$espacio-md;
+        color: v.$color-texto;
+        background-color: v.$color-header;
+        border: v.$borde-control solid v.$color-borde;
+        border-radius: v.$radio-control;
+        text-align: center;
+        text-decoration: none;
+        overflow-wrap: anywhere;
+        @include m.transicion-control;
+
+        &:hover,
+        &:focus-visible {
+            color: v.$color-blanco;
+            background-color: v.$color-verde-activo;
+            border-color: v.$color-verde-activo;
+        }
+
+        &:focus-visible {
+            @include m.foco;
+        }
+    }
+}

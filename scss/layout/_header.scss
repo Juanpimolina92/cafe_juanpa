@@ -1,0 +1,66 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+.encabezado-logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    gap: v.$espacio-sm;
+
+    h1 {
+        min-width: 0;
+        margin: 0;
+    }
+}
+
+.logo {
+    display: inline-block;
+    flex: 0 0 auto;
+    border-radius: v.$radio-control;
+
+    img {
+        width: v.$tamano-logo * 0.8;
+        height: v.$tamano-logo * 0.8;
+        object-fit: contain;
+        display: block;
+        animation: entrada-logo v.$duracion-entrada ease-out;
+        @include m.transicion-control;
+    }
+
+    &:hover img,
+    &:focus-visible img {
+        transform: rotate(-5deg) scale(1.05);
+        filter: drop-shadow(0 3px 5px rgba(v.$color-negro, 0.2));
+    }
+
+    &:focus-visible {
+        @include m.foco(v.$color-verde-oscuro);
+    }
+}
+
+@keyframes entrada-logo {
+    from {
+        opacity: 0;
+        transform: translateY(v.$espacio-sm) rotate(-8deg) scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0) scale(1);
+    }
+}
+
+header {
+    background-color: v.$color-header;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: v.$espacio-md;
+    padding: clamp(v.$espacio-sm, 3vw, v.$espacio-lg);
+    min-width: 0;
+    text-align: center;
+    border-bottom: 3px solid v.$color-turquesa;
+    box-shadow: 0 4px 10px rgba(v.$color-negro, 0.15);
+}

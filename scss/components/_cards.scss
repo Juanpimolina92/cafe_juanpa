@@ -1,0 +1,104 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+@use "../utilities/placeholders";
+
+.tarjetas-comentarios {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: v.$espacio-lg;
+    margin-top: v.$espacio-md;
+
+    article {
+        padding: v.$espacio-lg;
+    }
+}
+
+.tarjeta-comentario {
+    @extend %superficie-tarjeta;
+    cursor: default;
+    @include m.superficie;
+    @include m.transicion-control;
+
+    p {
+        color: v.$color-texto;
+    }
+
+    &:hover {
+        border-color: v.$color-verde;
+        transform: translateY(-6px);
+        box-shadow: v.$sombra-comentario;
+    }
+
+    &:focus {
+        border-color: v.$color-verde;
+        @include m.foco(v.$color-verde-oscuro, 4px, 4px);
+        transform: translateY(-4px);
+    }
+
+    &:active {
+        background-color: v.$color-tarjeta-activa;
+        transform: scale(0.97);
+        box-shadow: none;
+    }
+
+    &:hover .titulo-comentario::after,
+    &:focus .titulo-comentario::after {
+        transform: scale(1.12);
+        filter: drop-shadow(0 3px 3px rgba(v.$color-negro, 0.35));
+    }
+
+    &:active .titulo-comentario::after {
+        transform: scale(0.9);
+    }
+}
+
+.titulo-comentario {
+    // Las estrellas siguen generandose desde los estilos.
+    &::after {
+        content: " ⭐⭐⭐⭐⭐";
+        display: inline-block;
+        margin-left: v.$espacio-xs;
+        font-size: v.$texto-base;
+        @include m.transicion-control;
+    }
+}
+
+.texto-comentario {
+    &::first-line {
+        color: v.$color-verde-activo;
+        font-weight: 600;
+    }
+}
+
+.tarjeta-producto {
+    @extend %superficie-tarjeta;
+    @include m.superficie;
+    @include m.transicion-control;
+    padding: v.$espacio-lg;
+
+    p {
+        color: v.$color-texto;
+    }
+}
+
+.card-simple {
+    @extend %superficie-tarjeta;
+    @include m.superficie;
+    @include m.transicion-control;
+
+    p,
+    li {
+        color: v.$color-texto;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: v.$color-verde;
+        transform: translateY(-5px);
+        box-shadow: v.$sombra-tarjeta;
+    }
+
+    &:focus {
+        @include m.foco;
+    }
+}

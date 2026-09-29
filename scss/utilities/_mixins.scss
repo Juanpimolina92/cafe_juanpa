@@ -1,0 +1,28 @@
+@use "variables" as v;
+
+%transicion-control {
+    transition: color v.$transicion, background-color v.$transicion,
+        border-color v.$transicion, transform v.$transicion,
+        box-shadow v.$transicion, filter v.$transicion;
+}
+
+%foco-control {
+    outline: var(--foco-grosor, 3px) solid var(--foco-color, #{v.$color-verde-oscuro});
+    outline-offset: var(--foco-separacion, 3px);
+}
+
+@mixin transicion-control { @extend %transicion-control; }
+
+@mixin foco($color: v.$color-verde-oscuro, $grosor: v.$borde-foco, $separacion: 3px) {
+    @extend %foco-control;
+    --foco-color: #{$color};
+    --foco-grosor: #{$grosor};
+    --foco-separacion: #{$separacion};
+}
+
+@mixin superficie { background-color: v.$color-superficie; }
+
+// Solo se invoca desde layout/_media-queries.scss.
+@mixin desde($ancho) {
+    @media (min-width: $ancho) { @content; }
+}

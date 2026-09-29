@@ -1,0 +1,7 @@
+@use "variables" as v;
+
+%superficie-tarjeta {
+    min-width: 0;
+    border: v.$borde-control solid v.$color-borde;
+    border-radius: v.$radio-tarjeta;
+}

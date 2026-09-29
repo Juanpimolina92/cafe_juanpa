@@ -1,0 +1,43 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+@use "../utilities/placeholders";
+
+// Paneles de contenido y contacto comparten superficie y espaciado.
+.contenido-pagina,
+.datos-contacto,
+.formulario-contacto {
+    @extend %superficie-tarjeta;
+    padding: clamp(v.$espacio-sm, 3vw, v.$espacio-xl);
+    @include m.superficie;
+}
+
+.datos-contacto {
+    overflow-wrap: anywhere;
+}
+
+.contenido-pagina p,
+.datos-contacto p,
+.datos-contacto li,
+.formulario-contacto label {
+    color: v.$color-texto;
+}
+
+.imagen-historia {
+    display: block;
+    width: 100%;
+    border-radius: v.$radio-panel;
+}
+
+.formulario-contacto {
+    .form-control,
+    .form-select {
+        min-width: 0;
+        max-width: 100%;
+        border: v.$borde-control solid v.$color-borde;
+
+        &:focus {
+            border-color: v.$color-verde;
+            box-shadow: 0 0 0 4px rgba(v.$color-verde, 0.35);
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+// Un solo bloque por breakpoint para todo el CSS propio.
+@include m.desde(v.$breakpoint-tablet) {
+    .encabezado-logo { gap: v.$espacio-lg; }
+    .logo img { width: v.$tamano-logo; height: v.$tamano-logo; }
+    header { flex-direction: row; justify-content: space-between; text-align: left; flex-wrap: wrap; }
+    .navbar-cafe { flex-direction: row; gap: v.$espacio-lg; }
+    .productos, .pagos { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+    .contenedor-proyectos, .tarjetas-comentarios { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    footer { flex-direction: row; justify-content: space-around; align-items: flex-start; text-align: left; flex-wrap: wrap; }
+}
+
+@include m.desde(v.$breakpoint-desktop) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    .grid-principal { gap: v.$espacio-3xl; }
+    .contenedor-proyectos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .logo img,
+    [data-aos] {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}

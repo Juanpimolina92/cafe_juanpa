@@ -1,0 +1,31 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+.btn-cafe {
+    color: v.$color-blanco;
+    background-color: v.$color-verde;
+    border: v.$borde-control solid v.$color-verde;
+    border-radius: v.$radio-control;
+    @include m.transicion-control;
+
+    &:hover {
+        color: v.$color-blanco;
+        background-color: v.$color-verde-activo;
+        border-color: v.$color-verde-activo;
+        transform: translateY(-2px);
+    }
+
+    &:focus {
+        color: v.$color-blanco;
+        background-color: v.$color-verde;
+        @include m.foco(v.$color-verde);
+        box-shadow: 0 0 0 4px rgba(v.$color-verde, 0.35);
+    }
+
+    &:active {
+        color: v.$color-blanco;
+        background-color: v.$color-verde-oscuro;
+        border-color: v.$color-verde-oscuro;
+        transform: scale(0.96);
+    }
+}

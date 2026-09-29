@@ -1,0 +1,55 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+footer {
+    background-color: v.$color-footer;
+    color: v.$color-negro;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: v.$espacio-lg;
+    padding: v.$espacio-lg;
+
+    > div, > section {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    a {
+        display: inline-block;
+        padding: 3px 7px;
+        color: v.$color-texto;
+        border-radius: v.$radio-enlace;
+        @include m.transicion-control;
+
+        &:hover {
+            color: v.$color-blanco;
+            background-color: v.$color-verde;
+        }
+
+        &:focus {
+            color: v.$color-blanco;
+            background-color: v.$color-verde;
+            @include m.foco($separacion: 2px);
+        }
+
+        &:active {
+            background-color: v.$color-verde-oscuro;
+            transform: scale(0.94);
+        }
+    }
+
+    .volver-arriba {
+        padding: v.$espacio-sm v.$espacio-lg;
+        color: v.$color-blanco;
+        background-color: v.$color-verde-activo;
+        text-decoration: none;
+        text-align: center;
+    }
+}

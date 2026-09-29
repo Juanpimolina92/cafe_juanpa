@@ -1,0 +1,48 @@
+@use "../utilities/variables" as v;
+@use "../utilities/mixins" as m;
+
+#galeriaCafeJuanpa {
+    width: min(100%, 760px);
+    margin: 0 auto;
+
+    .carousel-inner {
+        width: 100%;
+        overflow: hidden;
+        border-radius: v.$radio-carousel;
+        box-shadow: 0 10px 25px rgba(v.$color-negro, 0.3);
+    }
+
+    .carousel-item img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    @include m.transicion-control;
+    opacity: 1;
+
+    &:hover {
+        background-color: rgba(v.$color-verde, 0.45);
+    }
+
+    &:focus {
+        @include m.foco(v.$color-verde, $separacion: -5px);
+    }
+
+    &:active {
+        background-color: rgba(v.$color-verde-oscuro, 0.75);
+        transform: scale(0.95);
+    }
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: v.$color-verde-oscuro;
+    border-radius: 50%;
+    padding: v.$espacio-lg;
+    background-size: 60%;
+}

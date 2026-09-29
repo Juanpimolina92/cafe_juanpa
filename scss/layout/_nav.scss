@@ -131,7 +131,7 @@
     max-width: v.$ancho-contenido;
     margin: v.$espacio-lg auto;
     padding: v.$espacio-sm;
-    background: v.$color-header;
+    background: v.$color-fondo;
     border-radius: v.$radio-panel;
 
     .enlace-ancla {
@@ -142,7 +142,7 @@
         max-width: 100%;
         padding: v.$espacio-xs v.$espacio-md;
         color: v.$color-texto;
-        background-color: v.$color-header;
+        background-color: v.$color-fondo;
         border: v.$borde-control solid v.$color-borde;
         border-radius: v.$radio-control;
         text-align: center;

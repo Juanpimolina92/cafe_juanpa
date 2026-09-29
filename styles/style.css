@@ -43,6 +43,12 @@ img {
   height: auto;
 }
 
+::selection {
+  color: #322619;
+  background-color: #f6e3bc;
+  text-shadow: none;
+}
+
 [id] {
   scroll-margin-top: 40px;
 }
@@ -189,7 +195,7 @@ h1, h2, h3 {
   }
 }
 header {
-  background-color: #c7d7df;
+  background-color: #f5f0e8;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -210,7 +216,7 @@ header {
   width: 100%;
   min-width: 0;
   padding: 12px;
-  background-color: #afbe92;
+  background-color: #edf1e5;
   border-radius: 12px;
 }
 .navbar-cafe a {

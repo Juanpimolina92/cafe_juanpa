@@ -10,7 +10,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: v.$color-texto;
     line-height: 1.6;
-    background-color: v.$color-header;
+    background-color: v.$color-fondo;
     font-weight: v.$peso-normal;
     background-image: url("../assets/escritorio-cafe-programacion.webp");
     background-size: cover;
@@ -23,6 +23,12 @@ body {
 img {
     max-width: 100%;
     height: auto;
+}
+
+::selection {
+    color: v.$color-texto-seleccion;
+    background-color: v.$color-seleccion;
+    text-shadow: none;
 }
 
 [id] {

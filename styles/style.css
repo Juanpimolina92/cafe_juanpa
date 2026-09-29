@@ -30,7 +30,7 @@ body {
   line-height: 1.6;
   background-color: #c7d7df;
   font-weight: 400;
-  background-image: url("../imagenes/escritorio-cafe-programacion.webp");
+  background-image: url("../assets/escritorio-cafe-programacion.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -731,9 +731,9 @@ footer .volver-arriba {
   }
   footer {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-start;
-    text-align: left;
+    text-align: center;
     flex-wrap: wrap;
   }
 }
